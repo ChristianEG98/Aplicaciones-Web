@@ -1,0 +1,25 @@
+{
+  "name": "pv4_g19",
+  "version": "1.0.0",
+  "description": "practica 4 voluntaria",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "practica",
+    "voluntaria",
+    "4",
+    "aw"
+  ],
+  "author": "Christian Esteban",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}

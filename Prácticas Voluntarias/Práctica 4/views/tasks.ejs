@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- css para la impresión por pantalla -->
+        <link rel="stylesheet" href=".\css\tasksScreen.css" media="screen">
+        <!-- css para la impresión -->
+        <link rel="stylesheet" href=".\css\tasksPrint.css" media="print">
+        
+        <!-- favicon -->
+        <link rel="icon" href=".\img\favicon.svg">
+        <title>Gestor de tareas</title>
+        <meta charset="utf-8"/>
+    </head>
+
+    <body>
+        <!-- contenedor que engloba toda la página -->
+        <div class="contenedor">
+            <!-- cabecera de la página -->
+            <div class="cabecera">
+                <!-- título -->
+                <div class="titulo">
+                    <img id="imagenTareas" src=".\img\logo.png" alt="logo tareas">
+                    <p id="tituloTareas">TAREAS</p>
+                </div>
+                <!-- panel de usuario de la derecha -->
+                <div class="panelUsuario">
+                    <div class="fotoPerfil">
+                        <img src=".\img\profile.png" alt="foto de perfil">
+                    </div>
+                    <div class="infoUsuario">
+                        <p>usuario@gmail.com</p>
+                        <br>
+                        <a href="" id="textoDesconectar">Desconectar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- cuerpo de la página que contiene: añadir notas, las notas y eliminar notas -->
+            <div class="cuerpo">
+                <!-- formulario y botón para añadir una nota nueva -->
+                <form class="cajaNuevaNota" action="/addTask" method= "POST">
+                    <input type="text" name="textoNota" placeholder=" Añade una nueva nota">
+                    <button type="submit">Añadir</button>
+                </form>
+                <!-- lista con las notas, cada elemento de la misma es una nota -->
+                <!-- la estructura de cada nota esta formada por:
+                    - texto de la nota
+                    - tags
+                    - botón de marcar como finalizada
+                 -->
+                <ul class="cajaNotas">
+                    <% taskList.forEach(function(task, i) { %>
+                        <% if (!task.done) { %>
+                            <li class="nota">
+                                <div class="notaTexto">
+                                    <p><%= task.text %></p>
+                                </div>
+                                <div class="notaTags">
+                                    <% task.tags.forEach(function(tag) { %>
+                                        <p class="tag"><%= tag %></p>
+                                    <% }); %>
+                                </div>
+                                <div class="notaFinalizarBoton">
+                                    <a href="/finish/<%=i%>" class="textoFin">Marcar finalizada</a>
+                                </div>
+                            </li>
+                        <% } else { %>
+                            <li class="nota notaFinalizada">
+                                <p><%= task.text %></p>
+                            </li>
+                        <% } %>
+                    <% }); %>  
+                </ul>
+                <!-- enlace para eliminar las notas marcadas como finalizadas -->
+                <div class="cajaEliminar">
+                    <a href="/deletedCompleted" id="textoEliminar">Eliminar tareas completadas</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
