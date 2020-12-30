@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- css para la impresión por pantalla -->
+        <link rel="stylesheet" href=".\css\tasksScreen.css" media="screen">
+        <!-- css para la impresión -->
+        <link rel="stylesheet" href=".\css\tasksPrint.css" media="print">
+        
+        <!-- favicon -->
+        <link rel="icon" href=".\img\favicon.svg">
+        <title>Gestor de tareas</title>
+        <meta charset="utf-8"/>
+    </head>
+
+    <body>
+        <!-- contenedor que engloba toda la página -->
+        <div class="contenedor">
+            <!-- cabecera de la página -->
+            <div class="cabecera">
+                <!-- título -->
+                <div class="titulo">
+                    <img id="imagenTareas" src=".\img\logo.png" alt="logo tareas">
+                    <p id="tituloTareas">TAREAS</p>
+                </div>
+
+            </div>
+            <!-- cuerpo de la página que contiene login -->
+            <div class="cuerpo">
+                <form class="cajaLogin" action="/login" method="POST">
+                    <p>Dirección de correo</p>
+                    <input class="formLogin" type="text" name="correo" id="correoLogin">
+                    <p>Contraseña</p>
+                    <input class="formLogin" type="password" name="password" id="passwordLogin">
+                    <button class="botonLogin">Aceptar</button>
+                    <% if(typeof errorMsg != "undefined") { %>
+                        <p id="mensajeErrorLogin"><%= errorMsg %></p>
+                    <% } %>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
