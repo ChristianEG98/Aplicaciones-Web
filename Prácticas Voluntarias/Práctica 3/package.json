@@ -1,0 +1,23 @@
+{
+  "name": "practica3",
+  "version": "1.0.0",
+  "description": "practica 3 voluntaria",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "keywords": [
+    "practica",
+    "3",
+    "voluntaria",
+    "aw",
+    "node"
+  ],
+  "author": "Christian Esteban",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
