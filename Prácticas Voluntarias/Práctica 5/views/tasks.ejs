@@ -28,7 +28,7 @@
                         <img src="/imagenUsuario" alt="foto de perfil">
                     </div>
                     <div class="infoUsuario">
-                        <p><%= correo %></p>
+                        <p><%= userEmail%></p>
                         <!-- Usar form para entrada y salida de acciones. Busca entre todos los métodos GET el que corresponda con action: /logout -->
                         <form action="/logout" method="GET">
                             <input id="textoDesconectar" type="submit" value="Desconectar">
@@ -50,6 +50,8 @@
                     - botón de marcar como finalizada
                  -->
                 <ul class="cajaNotas">
+                    <!-- Si no encuentra ninguna nota, no entra a la función -->
+                    <% if(taskList == true) { %>
                     <% taskList.forEach(function(task, i) { %>
                         <% if (!task.done) { %>
                             <li class="nota">
@@ -71,6 +73,7 @@
                             </li>
                         <% } %>
                     <% }); %>  
+                    <% } %>
                 </ul>
                 <!-- enlace para eliminar las notas marcadas como finalizadas -->
                 <div class="cajaEliminar">
