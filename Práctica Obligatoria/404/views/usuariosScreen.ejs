@@ -1,0 +1,59 @@
+<!-- Vista usuarioScreen -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>404</title>
+    <link rel="stylesheet" href="\css\cabeceraEstilos.css">
+    <link rel="stylesheet" href="\css\usuariosEstilos.css">
+    <meta charset="utf-8"/>
+    <link rel="icon" href="\img\favicon.png">
+</head>
+
+<body>
+    <div class="cabecera">
+        <div class="cabeceraSuperior">
+            <div class="cabeceraIzquierda">
+                <a class="boton" href="/preguntas">Preguntas</a>
+                <a class="boton" href="/preguntas/sin_responder">Sin responder</a>
+                <a class="boton" href="/usuarios">Usuarios</a>
+            </div>
+            <div class="cabeceraCentro">
+                <h1 id="titulo">404</h1>
+            </div>
+            <div class="cabeceraDerecha">
+                <img id="fotoPerfil" src="/imagenUsuario" alt="foto de perfil">
+                <a id="nombreUsuario" href="/perfil"><%= userName %></a>
+                <form action="/logout" method="GET">
+                    <input class="boton" id="botonDesconectar" type="submit" value="Cerrar sesión">
+                </form>
+            </div>
+        </div>
+        <div class="cabeceraInferior">
+            <form class="cabeceraInferior" method= "POST" action="/preguntas/preguntasFiltradas">
+                <input type="search" name="busqueda" id="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                <button id="botonBusqueda">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="cuerpo">
+        <p id="tituloPagina"><%=tituloPagina %></p>
+        <div class="busqueda">
+            <form class="filtrar" method="POST" action="/usuarios/filtrar">
+                <input type="search" name="filtrar" id="busqueda" placeholder="Filtar por usuario">
+                <button id="botonBusqueda">Filtrar</button>
+            </form>
+        </div>
+        <ul class="cajaUsuarios">
+            <% userList.forEach(function(users, i) { %>              
+            <li class="user">
+                <img class="fotoUsuario" src="/imagenUsuario/<%=users.correo %>" alt="foto usuario">
+                <a href="/perfil/<%=users.correo %>"><%=users.nombre %></a>
+                <p><%=users.reputacion %> puntos</p>
+                <a class="tag" href="/preguntas/filtrar_etiquetas/<%=users.etiqueta%>"><%= users.etiqueta%></a>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>

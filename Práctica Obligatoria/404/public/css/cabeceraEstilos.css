@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.cabecera{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background: linear-gradient(to bottom, peachpuff, white 90%);
+}
+.cabeceraSuperior{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+#titulo{
+    font-weight: 700;
+    font-size: 150px;
+    text-shadow: 2px 2px 5px black;
+}
+.cabeceraInferior{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 35px;
+    padding-top: 5px;
+}
+.cabeceraIzquierda{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 5px;
+    width: 10%;
+}
+.cabeceraDerecha{
+    width: 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+    margin-top: 10px;
+}
+#fotoPerfil{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 10px;
+}
+.boton{
+    width: 90%;
+    margin-top: 10px;
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(255, 170, 95);
+    font-weight: 700;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.boton:hover{
+    background-color: black;
+    color: white;
+}
+.infoUsuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+}
+#tituloPagina{
+    font-size: 25px;
+    font-weight: 600;
+}
+#botonDesconectar{
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(255, 116, 116);
+    border: 1px solid rgb(255, 116, 116);
+}
+#nombreUsuario{
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+}
+#nombreUsuario:hover{
+    color: rgb(255, 170, 95);
+}
+#busqueda{
+    width: 100%;
+    padding: 5px;
+    margin-right: 5px;
+    border: rgb(255, 170, 95) 2px solid;
+    border-radius: 50px;
+}
+#botonBusqueda{
+    padding: 5px;
+    border-radius: 50px;
+    background-color: rgb(255, 170, 95);
+    border: rgb(255, 170, 95) 2px solid;
+}
+#botonBusqueda:hover{
+    padding: 7px;
+    background-color: black;
+    border: black;
+    color: white;
+}

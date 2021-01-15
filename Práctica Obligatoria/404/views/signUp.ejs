@@ -1,0 +1,39 @@
+<!-- Vista signUp -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>404</title>
+    <link rel="stylesheet" href="\css\signEstilos.css">
+    <meta charset="utf-8"/>
+    <link rel="icon" href="\img\favicon.png">
+</head>
+
+<body>
+    <div class="cabecera">
+        <h1 id="titulo">404</h1>
+    </div>
+    <div class="cuerpo">
+        <!-- Formulario de registro de usuario -->
+        <form class="login" action="/registro" method="POST">
+            <h2 id="tituloPagina">Nuevo usuario</h2>
+            <p>Correo *</p>
+            <input type="text" name="correo">
+            <p>Contraseña *</p>
+            <input type="password" name="contraseña">
+            <p>Confirmar contraseña *</p>
+            <input type="password" name="contraseñaComprobación">
+            <p>Nombre para mostrar *</p>
+            <input type="text" name="nombre">
+            <p>Imagen de perfil</p>
+            <input type="file" name="fotoPerfil">
+            <button class="boton">Crear cuenta</button>
+            <!-- Si hay algún eror, lo muestra -->
+            <% if(typeof errorMsg != "undefined") { %>
+                <p id="mensajeError"><%= errorMsg %></p>
+            <% } %>
+        </form>
+        <!-- Botón para iniciar sesión -->
+        <a class="boton" href="/login">Iniciar sesión</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 50px;
+}
+a:hover{
+    color: white;
+}
+#pregunta{
+    padding: 5px;
+    background-color: peachpuff;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 600;
+    border: rgb(255, 170, 95) 4px solid;
+    margin-bottom: 20px;
+}
+.cabeceraPregunta{
+    display: flex;
+    flex-direction: row;
+    background-color: peachpuff;
+    border: rgb(255, 170, 95) 4px solid;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+.textoPregunta{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75%;
+}
+#descripcion{
+    font-size: large;
+    text-align: justify;
+}
+.tagsPregunta{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    justify-content: center;
+}
+.tag{
+    background-color: rgb(255, 170, 95);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.tag:hover{
+    color: peachpuff;
+    background-color: black;
+}
+.votos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    border: rgb(255, 170, 95) 4px solid;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 20px;
+}
+#vistas{
+    background-color: rgb(255, 170, 95);
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 5px;
+}
+#numVotos{
+    font-weight: 700;
+}
+.cajaBotonesVotar{
+    display: flex;
+    flex-direction: row;
+}
+.imagenVotar{
+    width: 22px;
+    align-self: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.botonVotar{
+    border-radius: 100px;
+    margin: 5px;
+}
+#positivo{
+    background-color: rgb(55, 204, 154);
+    border:  rgb(55, 204, 154) 1px solid;
+}
+#negativo{
+    background-color: rgb(255, 60, 60);
+    border: rgb(253, 60, 60) 1px solid;
+}
+#positivo:hover, #negativo:hover{
+    background-color:white;
+    border: white 1px solid;
+}
+.infoPregunta{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: flex-end;
+    margin-left: 20px;
+    border: rgb(255, 170, 95) 4px solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+#fotoUsuario{
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Respuestas */
+.contenedorRespuestas{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.respuesta{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: lightskyblue;
+    border: rgb(39, 126, 180) 4px solid;
+    border-radius: 10px;
+}
+.cuerpoRespuesta{
+    width: 75%;
+    text-align: justify;
+}
+#votosRespuesta{
+    border: rgb(39, 126, 180) 4px solid;
+    width: 7%;
+    align-items: center;
+}
+#infoRespuesta{
+    border: rgb(39, 126, 180) 4px solid;
+}
+
+/* Añadir respuesta */
+.contenedorTuRespuesta{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
+}
+#formRespuesta{
+    height: 40px;
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;  
+    border: rgb(39, 126, 180) 4px solid;
+    font-size: large;
+}
+#botonRespuesta{
+    padding: 10px;
+    border: rgb(39, 126, 180) 4px solid;
+    background-color: lightskyblue;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: medium;
+}
+#botonRespuesta:hover{
+    border: black 4px solid;
+    background-color: black;
+    color: white;
+}

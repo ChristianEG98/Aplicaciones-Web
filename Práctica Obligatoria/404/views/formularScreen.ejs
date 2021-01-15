@@ -1,0 +1,58 @@
+<!-- Vista formularScreen -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>404</title>
+    <link rel="stylesheet" href="\css\cabeceraEstilos.css">
+    <link rel="stylesheet" href="\css\preguntasEstilos.css">
+    <meta charset="utf-8"/>
+    <link rel="icon" href="\img\favicon.png">
+</head>
+
+<body>
+    <div class="cabecera">
+        <div class="cabeceraSuperior">
+            <div class="cabeceraIzquierda">
+                <a class="boton" href="/preguntas">Preguntas</a>
+                <a class="boton" href="/preguntas/sin_responder">Sin responder</a>
+                <a class="boton" href="/usuarios">Usuarios</a>
+            </div>
+            <div class="cabeceraCentro">
+                <h1 id="titulo">404</h1>
+            </div>
+            <div class="cabeceraDerecha">
+                <img id="fotoPerfil" src="/imagenUsuario" alt="foto de perfil">
+                <a id="nombreUsuario" href="/perfil"><%= userName %></a>
+                <form action="/logout" method="GET">
+                    <input class="boton" id="botonDesconectar" type="submit" value="Cerrar sesión">
+                </form>
+            </div>
+        </div>
+        <div class="cabeceraInferior">
+            <form class="cabeceraInferior" method= "POST" action="/preguntas/preguntasFiltradas">
+                <input type="search" name="busqueda" id="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                <button id="botonBusqueda">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="cuerpo">
+        <p id="tituloPagina">Formula una pregunta</p>
+            <form class="fomularioPregunta" action="/preguntas/nuevaPregunta" method="POST">
+                <h3>Título *</h3>
+                <p>Sé específico e imagina que estas haciendo la pregunta a otra persona</p>
+                <input class="formulario" type="text" name="tituloPregunta" placeholder="¿Cuál es tu pregunta sobre programación de aplicaciones web?">
+                <h3>Cuerpo *</h3>
+                <p>Incluye toda la información que alguien necesitaria para responder tu pregunta</p>
+                <input class="formulario" id="cuerpoPregunta" type="text" name="cuerpoPregunta">
+                <h3>Etiquetas</h3>
+                <p>Añade hasta 5 etiquetas para describir sobre qué trata tu pregunta</p>
+                <input class="formulario" type="text" name="tagsPregunta" placeholder="Por ejemplo: @node@express">
+                <% if(typeof errorMsg != "undefined") { %>
+                    <p id="mensajeError"><%= errorMsg %></p>
+                <% } %>
+                <button id="botonPublicar" class="boton">Publica tu pregunta</button>
+            </form>
+    </div>
+</body>
+</html>

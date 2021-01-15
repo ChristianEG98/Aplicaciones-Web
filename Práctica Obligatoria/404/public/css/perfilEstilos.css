@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.cuerpo{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 50px;
+    border-radius: 10px;
+    background-color: peachpuff;
+    border: rgb(255, 170, 95) solid 4px;
+}
+.perfilInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 35%;
+    font-size: large;
+    border-right: rgb(255, 170, 95) solid 4px;
+}
+.infoUsuario{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px 0px 0px 0px;
+    align-items: center;
+}
+#fotoUsuario{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#miembroFecha{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#miembroNombre{
+    font-weight: 700;
+    font-size: 25px;
+}
+#estadisticas{
+    border-top: rgb(255, 170, 95) solid 4px;
+    border-bottom:rgb(255, 170, 95) solid 4px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 700;
+    font-size: 25px;
+}
+.stats{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 700;
+}
+.medallasPerfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 65%;
+}
+#medallasTitulo{
+    text-align: center;
+    border-bottom:rgb(255, 170, 95) solid 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.cajaMedallas{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+.medallas{
+    width: 30%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-top: 10px;
+    font-size: 25px;
+}
+.textoMedallas{
+    font-weight: 700;
+}
+#bronce{
+    background-color: rgba(134, 89, 29, 0.8);
+}
+#plata{
+    background-color: rgba(119, 119, 119, 0.7);
+}
+#oro{
+    background-color: rgba(148, 131, 34, 0.8);
+}
+li{
+    margin-top: 5px;
+    list-style: none;
+}
+.medallaConseguida{
+    border-top: black solid 3px;
+    border-bottom: black solid 3px;
+    padding-bottom: 4px;
+    padding-top: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    color: whitesmoke;
+}

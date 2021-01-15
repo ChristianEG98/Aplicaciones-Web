@@ -1,0 +1,30 @@
+{
+  "name": "practica1",
+  "version": "1.0.0",
+  "description": "Practica 1 AW 404",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "node",
+    "practica",
+    "1",
+    "aw",
+    "404"
+  ],
+  "author": "Christian Esteban y Daniel Carrera",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-mysql-session": "^2.1.5",
+    "express-session": "^1.17.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  }
+}

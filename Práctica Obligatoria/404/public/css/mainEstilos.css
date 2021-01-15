@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+.cabecera{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: linear-gradient(to bottom, peachpuff, white 90%);
+}
+#titulo{
+    font-weight: 700;
+    font-size: 150px;
+    text-shadow: 2px 2px 5px black;
+}
+.busquedaCabecera{
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+#fotoPerfil{
+    width: 140px;
+    height: 140px;
+    margin: 5px;
+    border-radius: 10px;
+}
+#busqueda{
+    width: 100%;
+    padding: 5px;
+    margin-right: 5px;
+    border: rgb(255, 170, 95) 2px solid;
+    border-radius: 50px;
+}
+#botonBusqueda{
+    padding: 5px;
+    border-radius: 50px;
+    background-color: rgb(255, 170, 95);
+    border: rgb(255, 170, 95) 2px solid;
+}
+#botonBusqueda:hover{
+    padding: 7px;
+    background-color: black;
+    border: black;
+    color: whitesmoke;
+}
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 50%;
+    border: rgb(255, 170, 95) 5px solid;
+    background-color: peachpuff;
+    border-radius: 25px;
+}
+.panelPrincipal{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    width: 100%;
+}
+.botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+.boton{
+    width: 80%;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: rgb(255, 170, 95);
+    font-weight: 700;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.boton:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+.infoUsuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30%;
+}
+#tituloPagina{
+    font-size: 25px;
+    font-weight: 600;
+}
+a{
+    text-decoration: none;
+}
+#botonDesconectar{
+    width: 100%;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(255, 116, 116);
+    border: 1px solid rgb(255, 116, 116);
+}
+#nombreUsuario{
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+}
+#nombreUsuario:hover{
+    color: rgb(255, 170, 95);
+}

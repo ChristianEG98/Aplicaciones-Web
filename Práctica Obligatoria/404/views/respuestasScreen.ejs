@@ -1,0 +1,109 @@
+<!-- Vista respuestasScreen -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>404</title>
+    <link rel="stylesheet" href="\css\cabeceraEstilos.css">
+    <link rel="stylesheet" href="\css\respuestasEstilos.css">
+    <meta charset="utf-8"/>
+    <link rel="icon" href="\img\favicon.png">
+</head>
+
+<body>
+    <div class="cabecera">
+        <div class="cabeceraSuperior">
+            <div class="cabeceraIzquierda">
+                <a class="boton" href="/preguntas">Preguntas</a>
+                <a class="boton" href="/preguntas/sin_responder">Sin responder</a>
+                <a class="boton" href="/usuarios">Usuarios</a>
+            </div>
+            <div class="cabeceraCentro">
+                <h1 id="titulo">404</h1>
+            </div>
+            <div class="cabeceraDerecha">
+                <img id="fotoPerfil" src="/imagenUsuario" alt="foto de perfil">
+                <a id="nombreUsuario" href="/perfil"><%= userName %></a>
+                <form action="/logout" method="GET">
+                    <input class="boton" id="botonDesconectar" type="submit" value="Cerrar sesión">
+                </form>
+            </div>
+        </div>
+        <div class="cabeceraInferior">
+            <form class="cabeceraInferior" method= "POST" action="/preguntas/preguntasFiltradas">
+                <input type="search" name="busqueda" id="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                <button id="botonBusqueda">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="cuerpo">
+        <% if(questionList != false){ %>
+        <% questionList.forEach(function(question, i) { %> 
+        <h2 id="pregunta"><%=question.titulo%></h2>
+        <div class="cabeceraPregunta">
+            <div class="votos">
+                <p id="vistas"><%=question.numVisitas %> Visitas</p>
+                <p id="numVotos"><%=question.totalVotos %> votos</p>
+                <div class="cajaBotonesVotar">
+                    <form action="/preguntas/votar_positivo/pregunta/<%=question.id%>" method="POST">
+                        <button id="positivo" class="botonVotar"><img class="imagenVotar" src="\img\upvote.png" alt="upvote"></button>
+                    </form>
+                    <form action="/preguntas/votar_negativo/pregunta/<%=question.id%>" method="POST">
+                        <button id="negativo" class="botonVotar"><img class="imagenVotar" src="\img\downvote.png" alt="downvote"></button>
+                    </form>
+                </div>
+            </div>
+            <div class="textoPregunta">
+                <p id="descripcion"><%=question.cuerpo%></p>
+                <div class="tagsPregunta">
+                    <% question.temas.forEach(function(nombre_tema){ %>
+                        <a class="tag" href="/preguntas/filtrar_etiquetas/<%=nombre_tema%>"><%= nombre_tema %></a>
+                    <% }); %>
+                </div>
+            </div>
+            <div class="infoPregunta">
+                <p class="fechaPregunta">Formulada el <%=question.fecha%></p>
+                <img id="fotoUsuario" src="/imagenUsuario/<%= question.correo%>" alt="foto usuario">
+                <a href="/perfil/<%=question.correo%>"><%=question.nombre%></a>
+            </div>
+        </div>
+        
+        <ul class="contenedorRespuestas">
+            <h2><%=cantidadRespuestas %> Respuestas</h2>
+            <% if(answerList != false){ %>
+            <% answerList.forEach(function(answers, i) { %> 
+            <li class="respuesta">
+                <div id="votosRespuesta" class="votos">
+                    <p id="numVotos"><%=answers.totalVotos %> votos</p>
+                    <form action="/preguntas/votar_positivo/respuesta/<%=answers.id%>" method="POST">
+                        <button id="positivo" class="botonVotar"><img class="imagenVotar" src="\img\upvote.png" alt="upvote"></button>
+                    </form>
+                    <form action="/preguntas/votar_negativo/respuesta/<%=answers.id%>" method="POST">
+                        <button id="negativo" class="botonVotar"><img class="imagenVotar" src="\img\downvote.png" alt="downvote"></button>
+                    </form>
+                </div>
+                <div class="cuerpoRespuesta">
+                    <p id="descripcion"><%=answers.cuerpo%></p>
+                </div>
+                <div id="infoRespuesta" class="infoPregunta">
+                    <p class="fechaPregunta">Respondida el <%=answers.fecha %></p>
+                    <img id="fotoUsuario" src="/imagenUsuario/<%=answers.correo %>" alt="foto usuario">
+                    <a href="/perfil/<%=answers.correo%>"><%=answers.nombre%></a>
+                </div>
+            </li>
+            <% }); %>
+            <% } %>
+        </ul>
+        <h2>Tu respuesta</h2>
+        <div class="contenedorTuRespuesta">
+            <form class="contenedorTuRespuesta" action="/preguntas/subirRespuesta/<%=question.id%>" method="POST">
+                <input type="text" name="textorespuesta" id="formRespuesta">
+                <button id="botonRespuesta" class="botonesCabecera">Publica tu respuesta</button>
+            </form>
+        </div>
+    <% }); %>
+    <% } %>
+    </div>
+    
+</body>
+</html>

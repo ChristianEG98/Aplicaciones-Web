@@ -1,0 +1,105 @@
+<!-- Vista perfilScreen -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>404</title>
+    <link rel="stylesheet" href="\css\cabeceraEstilos.css">
+    <link rel="stylesheet" href="\css\perfilEstilos.css">
+    <meta charset="utf-8"/>
+    <link rel="icon" href="\img\favicon.png">
+</head>
+
+<body>
+    <div class="cabecera">
+        <div class="cabeceraSuperior">
+            <div class="cabeceraIzquierda">
+                <a class="boton" href="/preguntas">Preguntas</a>
+                <a class="boton" href="/preguntas/sin_responder">Sin responder</a>
+                <a class="boton" href="/usuarios">Usuarios</a>
+            </div>
+            <div class="cabeceraCentro">
+                <h1 id="titulo">404</h1>
+            </div>
+            <div class="cabeceraDerecha">
+                <img id="fotoPerfil" src="/imagenUsuario" alt="foto de perfil">
+                <a id="nombreUsuario" href="/perfil"><%= userName %></a>
+                <form action="/logout" method="GET">
+                    <input class="boton" id="botonDesconectar" type="submit" value="Cerrar sesión">
+                </form>
+            </div>
+        </div>
+        <div class="cabeceraInferior">
+            <form class="cabeceraInferior" method= "POST" action="/preguntas/preguntasFiltradas">
+                <input type="search" name="busqueda" id="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                <button id="botonBusqueda">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="cuerpo">
+        <div class="perfilInfo">
+            <div class="infoUsuario">
+                <img id="fotoUsuario" src="/imagenUsuario/<%=info.correo%>" alt="foto usuario">
+                <p id="miembroNombre"><%=info.nombre %></p>
+                <p id="miembroFecha">Miembro desde <%=info.fecha %></p>
+            </div>
+            <div class="estadisticas">
+                <p id="estadisticas">Estadísticas</p>
+                <div class="stats">  
+                    <div>
+                        <p>Preguntas</p>
+                        <h2><%=info.num_preguntas %></h2>
+                    </div>
+                    <div>
+                        <p>Reputación</p>
+                        <h2><%=info.reputacion %></h2>
+                    </div>
+                    <div>
+                        <p>Respuestas</p>
+                        <h2><%=info.num_respuestas %></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="medallasPerfil">
+            <p id="medallasTitulo">Medallas</p>
+            <div class="cajaMedallas">
+                <div id="bronce" class="medallas">
+                    <p class="textoMedallas">Bronce: <%= medallas_bronce.length%></p>
+                    <ul>
+                        <% medallas_bronce.forEach(function(b, i){ %>
+                        <li>
+                            <p class="medallaConseguida"><%= b%></p>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </div>
+                <div id="plata" class="medallas">
+                    <p class="textoMedallas">Plata: <%= medallas_plata.length%></p>
+                    <ul>
+                        <li>
+                            <% medallas_plata.forEach(function(b, i){ %>
+                                <li>
+                                    <p class="medallaConseguida"><%= b%></p>
+                                </li>
+                            <% }) %>
+                        </li>
+                    </ul>
+                </div>
+                <div id="oro" class="medallas">
+                    <p class="textoMedallas">Oro: <%= medallas_oro.length%></p>
+                    <ul>
+                        <li>
+                            <% medallas_oro.forEach(function(b, i){ %>
+                                <li>
+                                    <p class="medallaConseguida"><%= b%></p>
+                                </li>
+                            <% }) %>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

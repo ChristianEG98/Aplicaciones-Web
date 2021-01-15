@@ -1,0 +1,41 @@
+<!-- Vista mainScreen -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>404</title>
+    <link rel="stylesheet" href="\css\mainEstilos.css">
+    <meta charset="utf-8"/>
+    <link rel="icon" href="\img\favicon.png">
+</head>
+
+<body>
+    <div class="cabecera">
+        <h1 id="titulo">404</h1>
+    </div>
+    
+    <div class="busquedaCabecera">
+        <form class="busquedaCabecera" method= "POST" action="/preguntas/preguntasFiltradas">
+            <input id="busqueda" type="search" name="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+            <button id="botonBusqueda">Buscar</button>
+        </form>
+    </div>
+
+    <div class="cuerpo">
+        <h2 id="tituloPagina">Página Principal</h2>
+        <div class="panelPrincipal">
+            <div class="botones">
+                <a class="boton" href="/preguntas">Preguntas</a>
+                <a class="boton" href="/preguntas/sin_responder">Sin responder</a>
+                <a class="boton" href="/usuarios">Usuarios</a>
+            </div>
+            <div class="infoUsuario">
+                <img id="fotoPerfil" src="/imagenUsuario" alt="foto de perfil">
+                <a id="nombreUsuario" href="/perfil"><%= userName %></a>
+                <form action="/logout" method="GET">
+                    <input class="boton" id="botonDesconectar" type="submit" value="Cerrar sesión">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

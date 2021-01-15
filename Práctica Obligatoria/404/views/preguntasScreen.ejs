@@ -1,0 +1,69 @@
+<!-- Vista preguntasScreen -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>404</title>
+    <link rel="stylesheet" href="\css\cabeceraEstilos.css">
+    <link rel="stylesheet" href="\css\preguntasEstilos.css">
+    <meta charset="utf-8"/>
+    <link rel="icon" href="\img\favicon.png">
+</head>
+
+<body>
+    <div class="cabecera">
+        <div class="cabeceraSuperior">
+            <div class="cabeceraIzquierda">
+                <a class="boton" href="/preguntas">Preguntas</a>
+                <a class="boton" href="/preguntas/sin_responder">Sin responder</a>
+                <a class="boton" href="/usuarios">Usuarios</a>
+            </div>
+            <div class="cabeceraCentro">
+                <h1 id="titulo">404</h1>
+            </div>
+            <div class="cabeceraDerecha">
+                <img id="fotoPerfil" src="/imagenUsuario" alt="foto de perfil">
+                <a id="nombreUsuario" href="/perfil"><%= userName %></a>
+                <form action="/logout" method="GET">
+                    <input class="boton" id="botonDesconectar" type="submit" value="Cerrar sesión">
+                </form>
+            </div>
+        </div>
+        <div class="cabeceraInferior">
+            <form class="cabeceraInferior" method= "POST" action="/preguntas/preguntasFiltradas">
+                <input type="search" name="busqueda" id="busqueda" placeholder="Buscar por título/cuerpo de pregunta">
+                <button id="botonBusqueda">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="cuerpo">
+        <p id="tituloPagina"><%=tituloPagina %></p>
+        <div class="cabeceraPreguntas">
+            <p id="numeroPreguntas"><%= cantidadPreguntas %> preguntas</p>
+            <a class="boton" id="botonPregunta" href="/preguntas/formular">Formular una pregunta</a>
+        </div>
+        <ul class="cuerpoPreguntas">
+            <% if(questionList != false){ %>
+            <% questionList.forEach(function(question, i) { %>  
+            <li class="pregunta">
+                <div class="textoPregunta">
+                    <a class="tituloPregunta" href="/preguntas/<%=question.id%>"><%= question.titulo %></a>
+                    <p class="descripcion"><%= question.cuerpo %></p>
+                    <div class="tagsPregunta">
+                        <% question.temas.forEach(function(nombre_tema){ %>
+                            <a class="tag" href="/preguntas/filtrar_etiquetas/<%=nombre_tema%>"><%= nombre_tema %></a>
+                        <% }); %>
+                    </div>
+                </div>
+                <div info class="infoPregunta">
+                    <p id="fechaPregunta">Formulada el <%= question.fecha %></p>
+                    <img id="fotoUsuario" src="/imagenUsuario/<%=question.correo%>" alt="foto usuario">
+                    <a href="/perfil/<%=question.correo%>"><%= question.nombre %></a>
+                </div>
+            </li>
+            <% }); %>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
