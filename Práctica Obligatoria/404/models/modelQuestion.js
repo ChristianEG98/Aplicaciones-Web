@@ -488,6 +488,4 @@ class modelQuestion {
     }
 }
 
-
-
 module.exports = modelQuestion;

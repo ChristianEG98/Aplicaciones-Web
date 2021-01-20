@@ -59,7 +59,14 @@ module.exports = {
     comprobarRegistro: function(request, response, next){
         if(request.body.correo != "" && request.body.contraseña != "" && request.body.contraseñaComprobación != "" && request.body.nombre != ""){
             if(request.body.contraseña == request.body.contraseñaComprobación){
-                daoU.userSignUp(request.body.correo, request.body.contraseña, request.body.nombre, request.body.fotoPerfil, function (err, ok){
+                var icon;
+                if(request.file){
+                     icon = request.file.filename;
+                }
+                else{
+                    icon = request.body.fotoPerfil;
+                }
+                daoU.userSignUp(request.body.correo, request.body.contraseña, request.body.nombre, icon, function (err, ok){
                     if (err) {
                         next(err);
                         response.render("signUp", {errorMsg:err});

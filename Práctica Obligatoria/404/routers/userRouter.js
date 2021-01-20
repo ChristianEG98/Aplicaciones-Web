@@ -1,8 +1,11 @@
 "user strict";
 
+const path = require("path");
 const express = require("express");
 var userRouter = express.Router();
 const controllerUser = require("../controllers/controllerUser");
+const multer = require("multer");
+const multerFactory = multer({dest: path.join(__dirname, "../public/profile_imgs") });
 
 //Creación de un middleware de control de acceso con el email y el nombre del usuario
 const middlewareCurrentUser = function(request, response, next){
@@ -29,7 +32,7 @@ userRouter.post("/login", controllerUser.comprobarLogin);
 userRouter.get("/registro", controllerUser.registro);
 
 //Manejador de ruta para el formulario de registro
-userRouter.post("/registro", controllerUser.comprobarRegistro);
+userRouter.post("/registro", multerFactory.single("fotoPerfil"), controllerUser.comprobarRegistro);
 
 //Manejador de ruta para cerrar sesión
 userRouter.get("/logout", middlewareCurrentUser, controllerUser.logout);

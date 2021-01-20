@@ -72,7 +72,7 @@ module.exports = {
     },
 
     //Función que muestra una pregunta específica y sus respuestas
-     mostrarPreguntaEspecifica: function (request, response, next) {
+    mostrarPreguntaEspecifica: function (request, response, next) {
         daoQ.getQuestion(request.params.id_pregunta, function (err, question) {
             if (err) {
                 next(err);

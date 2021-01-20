@@ -14,7 +14,7 @@
     "aw",
     "404"
   ],
-  "author": "Christian Esteban y Daniel Carrera",
+  "author": "Christian Esteban Gómez y Daniel Carrera Sainz",
   "private": true,
   "license": "MIT",
   "dependencies": {
@@ -24,6 +24,7 @@
     "express-mysql-session": "^2.1.5",
     "express-session": "^1.17.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.2",
     "mysql": "^2.18.1",
     "path": "^0.12.7"
   }
