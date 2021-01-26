@@ -1,0 +1,257 @@
+/* Impotamos distintas fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    /*background-image: url(.\img\fondo.jpg);*/ 
+    background-image: url(../img/fondo.jpg)
+}
+.contenedor {
+    width: 100%;
+}
+/* Estilos de todo lo relacionado con la cabecera */
+.cabecera {
+    position: fixed;
+    background-image: url(../img/fondoCabecera.jpg);
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 2px 5px black;
+}
+.titulo {
+    align-items: center;
+    display: flex;
+    font-size: 80px;
+    font-weight: 1000;
+    margin-left: 25px;
+}
+.panelUsuario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 25px;
+}
+img {
+    border-radius: 20px;
+    height: 100px;
+}
+.infoUsuario {
+    margin-left: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+#tituloTareas {
+    text-shadow: 1px 1px 2px black;
+    padding-left: 15px;
+}
+#textoDesconectar {
+    color: black;
+    margin-top: 10px;
+}
+#textoDesconectar:hover {
+    text-shadow: 0px 0px 10px red;
+}
+/* Estilos de todo lo relacionado con el cuerpo en sí de la web, donde está todo lo relacionado con las notas */
+.cuerpo {
+    padding-top: 150px;
+    padding-bottom: 50px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Botón que permite eliminar las notas marcadas como finalizadas */
+.cajaEliminar {
+    background-color: rgb(70, 70, 70);
+    color: whitesmoke;
+    width: 25%;
+    margin: 10px;
+    border-radius: 10px;
+    border: 4px black solid;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 1px 1px 2px black;
+}
+/* Estilo del botón eliminar tareas cuando se pasa el cursor por encima */
+.cajaEliminar:hover{
+    box-shadow: 2px 2px 2px black inset;
+}
+/* Formulario que permite añadir nuevas notas */
+.cajaNuevaNota {
+    display: flex;
+    background-color: cadetblue;
+    flex-direction: column;
+    padding: 10px;
+    width: 40%;
+    border: 4px rgb(46, 77, 78) solid;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black inset;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+input {
+    width: 78%;
+    height: 43px;
+    border-radius: 5px;
+}
+button {
+    padding: 12px;
+    color: black;
+    background-color:whitesmoke;
+    width: 20%;
+    border-radius: 5px;
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 1px 1px 2px black;
+}
+/* Estilo del botón añadir tarea cuando se pasa el cursor por encima */
+button:hover {
+    box-shadow: 1px 1px 2px black inset;
+}
+/* Contenedor donde van a estar las notas */
+.cajaNotas {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 10px;
+    padding-left: 80px;
+}
+.nota {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(243, 243, 146);
+    width: 20%;
+    margin: 10px;
+    padding: 10px 20px 5px 20px;
+    border: 3px black solid;
+    border-radius: 40px 10px 40px 10px;
+    font-weight: 600;
+    text-align: justify;
+    box-shadow: 1px 1px 2px black;
+}
+.notaTags {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.notaFinalizarBoton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.notaTexto {
+    padding-bottom: 10px;
+}
+/* Estilo de la nota que está marcada como finalizada */
+.notaFinalizada {
+    text-decoration: line-through;
+    background-color: rgba(245, 100, 100, 0.9);
+}
+.tag {
+    margin: 5px;
+    padding: 5px;
+    background-color: cornflowerblue;
+    border-radius: 15px 5px 15px 5px;
+    border: 2px black solid;
+    text-align: center;
+    list-style: none;
+}
+.textoFin {
+    background-color: rgb(228, 58, 58);
+    padding: 5px 10px 5px 5px;
+    border: 2px black solid;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 2px black;
+}
+/* Estilo del botón finalizar tarea cuando se pasa el cursor por encima */
+.textoFin:hover {
+    box-shadow: 1px 1px 2px black inset;
+}
+.cajaLogin {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 10%;
+    padding: 20px;
+    width: 40%;
+    background-color: rgb(247, 250, 93);
+    border: 4px  rgb(106, 107, 30) solid;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black inset;
+    font-weight: 700;
+    justify-content: center;
+}
+
+.formLogin{
+    width: 100%;
+    font-size: x-large;
+}
+#mensajeErrorLogin{
+    color: red;
+}
+#correoLogin{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+#passwordLogin{
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.botonLogin{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cajaNuevoTag{
+    flex-direction: row;
+    margin-bottom: 10px;
+    width: 70%;
+}
+#nombreTarea{
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.cajaMostrarResultadoNota{
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    background-color:rgb(243, 243, 146);
+    border-radius: 5px;
+    width: 100%;
+    border: black 2px solid;
+}
+.cajaMostrarTags{
+    display: flex;
+    flex-direction: row;
+}
+#nombreTask{
+    font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

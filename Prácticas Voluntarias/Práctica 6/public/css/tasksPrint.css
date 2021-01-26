@@ -1,0 +1,43 @@
+/* Vista de impresión */
+body {
+    font-family: Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 12px;
+}
+/* Evitar que se muestren los siguientes elementos en la vista de impresión */
+.panelUsuario, .cajaEliminar, .cajaNuevaNota, .notaFinalizarBoton, #imagenTareas {
+    display: none;
+}
+#tituloTareas {
+    font-size: 18px;
+    padding-left: 20px;
+}
+.notaFinalizada {
+    margin-left: 30px;
+    text-decoration: line-through;
+}
+/* Para que el texto de la nota y los tags aparezcan en la misma línea */
+.notaTexto, .notaTags, p {
+    display: inline;
+}
+.notaTexto {
+    font-weight: bold;
+}
+p {
+    padding-left: 10px;
+}
+.nota {
+    padding-bottom: 10px;
+    text-align: justify;
+}
+/* Permite añadir contenido antes o después de un elemento del HTML */
+.tag::before {
+    content: "( ";
+}
+.tag::after {
+    content: " )";
+}
+p::after {
+    content: ":";
+    font-weight: bold;
+}
